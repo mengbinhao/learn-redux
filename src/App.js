@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TodoHeader />
+        <TodoHeader header="Todo List" />
         <TodoInput />
         <TodoItem />
       </div>
