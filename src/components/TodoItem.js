@@ -7,6 +7,8 @@ class TodoItem extends Component {
   constructor(props) {
     super(props)
     this.state = store.getState()
+    this.storeChange = this.storeChange.bind(this)
+    store.subscribe(this.storeChange)
   }
   render() {
     return (
@@ -14,11 +16,24 @@ class TodoItem extends Component {
         <List
           bordered
           dataSource={this.state.items}
-          renderItem={item => <List.Item>{item}</List.Item>}
+          renderItem={(item, index) => (
+            <List.Item onClick={this.deleteItem.bind(this, index)}>
+              {item}
+            </List.Item>
+          )}
           size="large"
         />
       </div>
     )
+  }
+  storeChange() {
+    this.setState(store.getState())
+  }
+  deleteItem(idx) {
+    store.dispatch({
+      type: 'deleteItem',
+      value: idx
+    })
   }
 }
 

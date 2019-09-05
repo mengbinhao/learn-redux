@@ -9,8 +9,10 @@ class TodoInput extends Component {
   constructor(props) {
     super(props)
     this.state = store.getState()
-    //subscribe callback
+
     this.storeChange = this.storeChange.bind(this)
+    this.addItem = this.addItem.bind(this)
+    //subscribe callback
     store.subscribe(this.storeChange)
   }
   render() {
@@ -23,7 +25,12 @@ class TodoInput extends Component {
           onChange={this.changeVal}
           value={this.state.inputValue}
         />
-        <Button type="primary" size="large" shape="round">
+        <Button
+          type="primary"
+          size="large"
+          shape="round"
+          onClick={this.addItem}
+        >
           按钮
         </Button>
       </div>
@@ -31,11 +38,16 @@ class TodoInput extends Component {
   }
   changeVal(e) {
     //defaine related action
-    const action = {
+    store.dispatch({
       type: 'changeVal',
       value: e.target.value
-    }
-    store.dispatch(action)
+    })
+  }
+  addItem(e) {
+    store.dispatch({
+      type: 'addItem',
+      value: this.state.inputValue
+    })
   }
   storeChange() {
     this.setState(store.getState())
