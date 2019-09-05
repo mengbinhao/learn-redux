@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import TodoHeader from './TodoHeader'
-import TodoItem from './TodoItem'
-import TodoInput from './TodoInput'
-
-const data = [
-  '今天心情不错哦',
-  'React + Redux + React-Router',
-  '老汉敲背精油按摩全套'
-]
+import TodoHeader from './components/TodoHeader'
+import TodoItem from './components/TodoItem'
+import TodoInput from './components/TodoInput'
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +13,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TodoHeader content={this.state.content} />
+        <TodoHeader />
         <TodoInput />
-        <TodoItem items={data} />
+        <TodoItem />
       </div>
     )
   }
