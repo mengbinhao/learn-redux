@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import List from 'antd/es/list'
 import 'antd/es/list/style/css'
 import store from '../store'
+import { deleteItemAction } from '../store/actionCreator'
 
 class TodoItem extends Component {
   constructor(props) {
@@ -30,10 +31,8 @@ class TodoItem extends Component {
     this.setState(store.getState())
   }
   deleteItem(idx) {
-    store.dispatch({
-      type: 'deleteItem',
-      value: idx
-    })
+    const action = deleteItemAction(idx)
+    store.dispatch(action)
   }
 }
 

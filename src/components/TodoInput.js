@@ -4,6 +4,7 @@ import 'antd/es/input/style/css'
 import Button from 'antd/es/button'
 import 'antd/es/button/style/css'
 import store from '../store'
+import { changeValAction, addItemAction } from '../store/actionCreator'
 
 class TodoInput extends Component {
   constructor(props) {
@@ -38,16 +39,12 @@ class TodoInput extends Component {
   }
   changeVal(e) {
     //defaine related action
-    store.dispatch({
-      type: 'changeVal',
-      value: e.target.value
-    })
+    const action = changeValAction(e.target.value)
+    store.dispatch(action)
   }
-  addItem(e) {
-    store.dispatch({
-      type: 'addItem',
-      value: this.state.inputValue
-    })
+  addItem() {
+    const action = addItemAction()
+    store.dispatch(action)
   }
   storeChange() {
     this.setState(store.getState())

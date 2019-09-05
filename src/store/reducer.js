@@ -1,3 +1,5 @@
+import { CHANGE_VAL, ADD_ITEM, DELETE_ITEM } from './actionTypes'
+
 const defaultState = {
   inputValue: '',
   items: [
@@ -12,20 +14,20 @@ export default (state = defaultState, action) => {
   //Reducer只接收state千万不要改变state
   //Reducer只接收state千万不要改变state
   //Reducer只接收state千万不要改变state
-  if (action.type === 'changeVal') {
+  if (action.type === CHANGE_VAL) {
     let newState = JSON.parse(JSON.stringify(state))
     newState.inputValue = action.value
     return newState
   }
 
-  if (action.type === 'addItem') {
+  if (action.type === ADD_ITEM) {
     let newState = JSON.parse(JSON.stringify(state))
-    newState.items.push(action.value)
+    newState.items.push(newState.inputValue)
     newState.inputValue = ''
     return newState
   }
 
-  if (action.type === 'deleteItem') {
+  if (action.type === DELETE_ITEM) {
     let newState = JSON.parse(JSON.stringify(state))
     newState.items.splice(action.value, 1)
     return newState
