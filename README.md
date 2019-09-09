@@ -18,4 +18,19 @@
 2. `reducer`必须纯函数
 3. 只有`store`能改变`state`内容,`reducer`不能改变
 
-#### 无状态组建
+
+#### 组建UI跟业务逻辑的拆分
+UI组建没有任何的业务逻辑
+#### 无状态组建(比如UI组建)
+```javascript
+import React from 'react'
+const Todo = (props) => {
+  return (
+    xxxx
+  )
+}
+```
+
+#### `react-thunk`
+#### `react-saga`
+#### `react-redux`

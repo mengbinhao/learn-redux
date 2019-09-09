@@ -1,4 +1,4 @@
-import { CHANGE_VAL, ADD_ITEM, DELETE_ITEM } from './actionTypes'
+import { CHANGE_VAL, ADD_ITEM, DELETE_ITEM, GET_ITEM } from './actionTypes'
 
 export const changeValAction = value => ({
   type: CHANGE_VAL,
@@ -13,3 +13,9 @@ export const deleteItemAction = index => ({
   type: DELETE_ITEM,
   value: index
 })
+
+export const getItemsAction = data => ({
+  type: GET_ITEM,
+  value: data
+})
+
