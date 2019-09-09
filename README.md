@@ -12,3 +12,10 @@
 #### 企业实际开发
 1. 抽取`actionTypes.js`
 2. 抽取`actionCreator.js`
+
+#### 坑
+1. `store`必须唯一
+2. `reducer`必须纯函数
+3. 只有`store`能改变`state`内容,`reducer`不能改变
+
+#### 无状态组建

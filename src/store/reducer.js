@@ -10,7 +10,7 @@ const defaultState = {
 }
 
 export default (state = defaultState, action) => {
-  console.log(state, action)
+  //console.log(state, action)
   //Reducer只接收state千万不要改变state
   //Reducer只接收state千万不要改变state
   //Reducer只接收state千万不要改变state

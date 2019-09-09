@@ -11,5 +11,5 @@ export const addItemAction = () => ({
 
 export const deleteItemAction = index => ({
   type: DELETE_ITEM,
-  index
+  value: index
 })
