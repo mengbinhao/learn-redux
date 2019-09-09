@@ -23,7 +23,7 @@ export default (state = defaultState, action) => {
 
   if (action.type === ADD_ITEM) {
     let newState = JSON.parse(JSON.stringify(state))
-    newState.items.push(newState.inputValue)
+    newState.items.push({url: '#', title:newState.inputValue})
     newState.inputValue = ''
     return newState
   }

@@ -31,6 +31,9 @@ const Todo = (props) => {
 }
 ```
 
+#### axios request data
+- `https://bird.ioliu.cn/v1`实现跨域请求
+
 #### `react-thunk`
 #### `react-saga`
 #### `react-redux`
