@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import List from 'antd/es/list'
 import 'antd/es/list/style/css'
 import store from '../store'
-import { deleteItemAction, getAsyncItemsAction } from '../store/actionCreator'
+import { deleteItemAction, getAsyncItemsSageAction } from '../store/actionCreator'
 
 class TodoItem extends Component {
   constructor(props) {
@@ -37,7 +37,9 @@ class TodoItem extends Component {
     store.dispatch(action)
   }
   componentDidMount() {
-    const action = getAsyncItemsAction()
+    // const action = getAsyncItemsAction()
+    // store.dispatch(action)
+    const action = getAsyncItemsSageAction()
     store.dispatch(action)
   }
 }
